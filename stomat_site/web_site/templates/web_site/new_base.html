@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medols Clinic</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: turquoise;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        #logo {
+            width: 50px;
+            height: 50px;
+        }
+        #clinic-name {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: white;
+            color: turquoise;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{% url 'about_clinic' %}">
+            <img src="https://cdn0.iconfinder.com/data/icons/stomatology/154/tooth-label-dentist-stomatology-2-1024.png" alt="Medols Logo" id="logo">
+        </a>
+        <div id="clinic-name">Медолс</div>
+        <nav>
+            <a href="{% url 'price_list' %}">Прайс лист</a>
+            <a href="{% url 'online_entry' %}">Онлайн запись</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Specific content will go here in inherited templates -->
+    </main>
+
+    <footer>
+        © 2023 Medols Clinic
+    </footer>
+</body>
+</html>
