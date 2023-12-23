@@ -21,7 +21,7 @@ def price_list(request):
 
 
 async def send_telegram_message(chat_id, message):
-    bot_token = '6612335040:AAHhUWB9youeoFg3rdURinADlSI83j2guP4'
+    bot_token = 'MY_TOKEN'
     bot = Bot(token=bot_token)
     await bot.send_message(chat_id=chat_id, text=message)
 
@@ -33,7 +33,7 @@ def online_entry(request):
             name = form.cleaned_data['name']
             phone = form.cleaned_data['phone']
 
-            chat_id = '1255453166'
+            chat_id = 'CHAT_ID'
             message = f"Запись на прием:\n Имя: {name}\n Телефон: {phone}"
             asyncio.run(send_telegram_message(chat_id, message))
 
