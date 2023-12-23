@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'web_site/new_base.html' %}
 
-</body>
-</html>
+{% block content %}
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #price {
+            table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            }
+            th, td {
+                /*border: 1px solid #ddd;*/
+                border: 0px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            th.text-left, td.text-left {
+                text-align: left;
+            }
+            th.text-right, td.text-right {
+                text-align: right;
+            }
+
+        }
+    </style>
+
+<table id="price" align="center">
+        <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td colspan="3"><strong>{{ category.name }}</strong></td>
+                </tr>
+                {% for service in services %}
+                {% if service.category == category %}
+                    <tr>
+                        <td class="text-left">{{ service.name }}</td>
+                        <td align="right" width="30%">{{ service.price }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

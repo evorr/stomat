@@ -31,7 +31,10 @@ class AppointmentSlot(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
 
+    def get_date(self):
+        return self.date
+
     def __str__(self):
-        return f'{self.doctor.name} - {self.date} {self.start_time} {self.end_time}'
+        return f'{self.date} {self.start_time} {self.end_time}'
 
 

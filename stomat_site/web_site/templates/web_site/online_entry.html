@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'web_site/new_base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <p></p>
+
+    <input type="image" src="/web_site/button.png">
+</form>
+
+{% endblock %}

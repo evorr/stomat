@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=ac7hmi)+kl+zno5vg&1*2fyy6siz)c5rcxcdk(^kr=xe2_vsq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1', ]
 
 
 # Application definition
@@ -117,6 +117,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
+
+MEDIA_ROOT = f'/home/evvrr/stomat/stomat_site/web_site/static/web_site'
+MEDIA_URL = '/web_site/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

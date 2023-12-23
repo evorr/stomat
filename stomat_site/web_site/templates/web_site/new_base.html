@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web_site/styles.css">
     <title>Medols Clinic</title>
     <style>
         body {
@@ -12,31 +14,53 @@
             padding: 0;
         }
         header {
-            background-color: turquoise;
+            background-color: #79d3d3;
             color: white;
             padding: 20px;
-            text-align: center;
+
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: space-between;*/
         }
         #logo {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: auto;
         }
         #clinic-name {
             font-size: 36px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 0;
         }
+
+        #contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            margin-left: auto;
+        }
+        #contact-info p {
+            margin: 0;
+        }
+        /*кнопки по центру*/
+        nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
             padding: 5px 10px;
-            border: 1px solid white;
             border-radius: 5px;
+            font-weight: bold;
         }
         nav a:hover {
             background-color: white;
             color: turquoise;
+
+            border: none;
         }
         main {
             padding: 20px;
@@ -51,18 +75,38 @@
 </head>
 <body>
     <header>
-        <a href="{% url 'about_clinic' %}">
-            <img src="https://cdn0.iconfinder.com/data/icons/stomatology/154/tooth-label-dentist-stomatology-2-1024.png" alt="Medols Logo" id="logo">
-        </a>
-        <div id="clinic-name">Медолс</div>
+
+        <table align="center" width="100%">
+
+        <tbody>
+            <tr>
+                <td align="left">
+                    <a href="{% url 'about_clinic' %}">
+                        <img src="/web_site/p6fgK1dKreg.jpg" alt="Medols Logo" id="logo">
+                    </a>
+                    <div id="clinic-name">Медолс</div>
+                    </td>
+                <td>
+                    <div id="contact-info">
+                        <p>8 800 500 33 32</p>
+                        <p>г. Киров, ул. Пролетарская, д. 14</p>
+                    </div></td>
+                </tr>
+
+        </tbody>
+    </table>
+
         <nav>
-            <a href="{% url 'price_list' %}">Прайс лист</a>
-            <a href="{% url 'online_entry' %}">Онлайн запись</a>
+            <a href="{% url 'price_list' %}">ПРАЙС ЛИСТ</a>
+            <a href="{% url 'online_entry' %}">ЗАКАЗАТЬ ЗВОНОК</a>
         </nav>
     </header>
 
     <main>
-        <!-- Specific content will go here in inherited templates -->
+{% block content %}
+
+
+{% endblock %}
     </main>
 
     <footer>
